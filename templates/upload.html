@@ -1,0 +1,61 @@
+<!doctype html>
+<title>Face Recognition Web App</title>
+<h1>Face Recognition Web App</h1>
+      <hr>
+      <h2>In order to try the face recognition app, please upload five images of yourself where the frontal face is clearly shown.</h2>
+	  <h2>After uploading five pictures, upload another picture to see if the web app can recognize your face.</h2>
+	  <h3>NOTE: After submitting, the whole process might take a while to process (~ 5mim).</h3>
+      <hr>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+
+<form method="post" action="/" enctype="multipart/form-data">
+	<label>First Image</label>
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+	<label>Second Image</label>
+	<dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+	</dl>
+	<label>Third Image</label>
+	<dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+	</dl>
+	<label>Fourth Image</label>
+	<dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+	</dl>
+	<label>Fifth Image</label>
+	<dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+	</dl>
+	<label>Test Image (IMPORTANT: Make sure to name your image "test" before submitting)</label>
+	<dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+	</dl>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+</form>
